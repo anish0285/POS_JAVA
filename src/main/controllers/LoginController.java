@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import main.apps.App;
+import main.apps.Employee;
 import main.services.DbBuildConnection;
 
 /** Controls the login screen */
@@ -23,9 +24,9 @@ public class LoginController {
   public void userLogin() {
 	  info.setText("Verifying...");
 	  DbBuildConnection dbConn = new DbBuildConnection();
-	  String[] loginReturn = dbConn.loginVerification(employeeId.getText(), pin.getText());
-	  if(loginReturn != null) {
-		  app.showMainScreen(loginReturn);
+	  Employee employee = dbConn.loginVerification(employeeId.getText(), pin.getText());
+	  if(employee != null) {
+		  app.showMainScreen(employee);
 	  }
 	  else {
 		  info.setFill(Color.RED);

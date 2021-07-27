@@ -14,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import main.apps.MenuItem;
 import main.apps.Transaction;
@@ -67,6 +68,9 @@ public class TransactionController {
 		else if(command =="remove") {
 			this.transaction.transItems.get(this.transaction.transItems.indexOf(item)).quantity -= 1;
 		}
+		else if(command == "refund") {
+			this.transaction.transItems.get(this.transaction.transItems.indexOf(item)).quantity *= -1;
+		}
 		if (this.transaction.transItems.get(this.transaction.transItems.indexOf(item)).quantity == 0) {
 			this.transaction.transItems.remove(this.transaction.transItems.indexOf(item));
 		}
@@ -101,7 +105,7 @@ public class TransactionController {
 	public void setOrderType(String orderType) {
 		for(Toggle toggle : this.orderType.getToggles()) {
 			Node node = (Node) toggle ;
-		    if(orderType == node.getId()) {
+		    if(orderType.equals(node.getId())) {
 		    	this.orderType.selectToggle(toggle);
 		    	break;
 		    }

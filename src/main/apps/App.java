@@ -39,14 +39,14 @@ public class App extends Application {
 	    }
   }
   
-  public void showMainScreen(String[] empData) {
+  public void showMainScreen(Employee employee) {
 	  try {
 	      FXMLLoader loader = new FXMLLoader(
 	        getClass().getResource("/resources/views/Main.fxml")
 	      );
 		  scene.setRoot((Parent) loader.load());
 	      MainController controller = loader.<MainController>getController();
-	      controller.initialize(this, empData);
+	      controller.initialize(this, employee);
 	    } catch (IOException ex) {
 	      System.out.println(ex);
 	    }

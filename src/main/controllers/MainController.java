@@ -9,8 +9,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import main.apps.App;
+import main.apps.Employee;
 import main.apps.Home;
 import main.apps.MenuItem;
+import main.apps.Reservation;
 import main.apps.Review;
 import main.apps.Transaction;
 import main.services.DbBuildConnection;
@@ -33,15 +35,18 @@ public class MainController {
 	  
 	  public Home home;
 	  public Review review;
+	  public Reservation reservations;
 	  
 	  App app;
+	  Employee employee;
 	  DbBuildConnection dbConn = new DbBuildConnection();
 	  
-	  public void initialize(App app, String[] empData) {
+	  public void initialize(App app, Employee employee) {
 		  this.app = app;
-		  empId.setText(empData[0]);
-		  empName.setText(empData[1]);
-		  empPosition.setText(empData[2]);
+		  this.employee = employee;
+		  empId.setText(this.employee.getEmployeeId());
+		  empName.setText(this.employee.getName());
+		  empPosition.setText(this.employee.getPosition());
 		  this.menuItems = dbConn.getSaleItems(this);
 		  addItemsToGridPane();
 		  updateGui();
@@ -71,27 +76,30 @@ public class MainController {
 	  
 	  public void homeClick(ActionEvent e) {
 		  this.changeTab("home");
-		  this.lastAction.setText("Open home tab");
+		  this.lastAction.setText("Home tab opened");
 	  }
 	  
 	  public void reviewClick() {
 		  this.changeTab("review");
-		  this.lastAction.setText("Open review tab");
+		  this.lastAction.setText("Review tab opened");
 	  }
 	  
 	  public void reservationClick() {
 		  this.changeTab("reservation");
-		  this.lastAction.setText("Open reservation tab");
+		  this.lastAction.setText("Reservation tab opened");
 	  }
 	  
 	  public void reportClick() {
 		  this.changeTab("report");
-		  this.lastAction.setText("Open report tab");
+		  this.lastAction.setText("Report tab opened");
 	  }
 	  
 	  public void functionClick() {
 		  if(this.activeTab == "home") {
 			  this.home.controller.tender();
+		  }
+		  else if(this.activeTab =="review") {
+			  this.review.controller.refund();
 		  }
 	  }
 	  

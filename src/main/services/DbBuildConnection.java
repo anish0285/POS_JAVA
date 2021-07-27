@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
+import main.apps.Employee;
 import main.apps.MenuItem;
 import main.apps.Transaction;
 import main.controllers.MainController;
@@ -29,14 +30,14 @@ public class DbBuildConnection {
 	}
 	
 	// if authorized returns String array with employee data else returns null
-	public String[] loginVerification(String employeeId, String pin) {
+	public Employee loginVerification(String employeeId, String pin) {
 		String query = "SELECT * FROM employee WHERE employeeId=" + employeeId + " and pin="+pin;
 		Statement st;
 		try {
 			st = con.createStatement();
 			ResultSet rs = st.executeQuery(query); 
 	        if (rs.next()) {
-	            return new String[] {rs.getString("EmployeeId"), rs.getString("Name"), rs.getString("Position")};
+	            return new Employee(rs.getString("EmployeeId"), rs.getString("Name"), rs.getString("Position"));
 	        }
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -128,6 +129,7 @@ public class DbBuildConnection {
 				transaction.controller.setOrderType(orderType);
 				transaction.controller.setTime(dateTime);
 				transaction.transItems = transItems;
+				transaction.controller.updateTable();
 				transactions.add(transaction);
 			}
 			st_one.close();
