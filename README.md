@@ -1,1 +1,1 @@
-# RestaurantPOS
+# Restaurant POS
