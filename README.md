@@ -4,7 +4,9 @@ This pro
 
 ## Working Demo of the Application
 
-[![Working Demo of the Restaurant POS](https://img.youtube.com/vi/1mm-djRaCyw/0.jpg)](https://www.youtube.com/watch?v=1mm-djRaCyw)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=1mm-djRaCyw"><img src="https://img.youtube.com/vi/1mm-djRaCyw/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
 
 ## Setup Instructions
 
