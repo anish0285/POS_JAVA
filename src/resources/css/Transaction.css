@@ -1,0 +1,22 @@
+.radio-button{
+	-fx-font-family: Arial;
+	-fx-font-size: 14px;
+}
+.radio-button .radio {
+    -fx-border-width: 1px;
+    -fx-border-color: #000;
+    -fx-background-color: white;
+    -fx-background-image: null;
+    -fx-border-radius: 5px;
+    -fx-padding: 2px;
+    -fx-cursor: hand;
+}
+
+.radio-button:disabled{
+	-fx-background-color: white;
+	-fx-opacity: 1;
+}
+.radio-button .dot {
+    -fx-background-radius: 3px;
+    -fx-padding: 5px;
+}
