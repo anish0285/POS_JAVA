@@ -21,7 +21,7 @@ public class App extends Application {
   public void start(Stage stage) throws IOException {
     
     showLoginScreen();
-    stage.setTitle("Tasty Indian Bistro - POS");
+    stage.setTitle("Restaurant POS");
     stage.setResizable(false);
     stage.getIcons().add(new Image("/resources/assets/icon.png"));
     stage.setScene(scene);
