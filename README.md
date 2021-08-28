@@ -1,6 +1,6 @@
 # Restaurant POS
 
-This application was developed as a part of my college's final project by me and my classmate - Sourabh Arora. It is build using Java and MySQL. While planning and developing this project we made sure to keep the concepts of MVC and OOP in check so that our application stay flexible for the future changes. Check out the video linked below to have a quick look at the working demo of the application.
+This application was developed as a part of my college's final project by me and my teammate - Sourabh Arora. It is build using Java and MySQL. While planning and developing this project we made sure to keep the concepts of MVC and OOP in check so that our application stay flexible for the future changes. Check out the video linked below to have a quick look at the working demo of the application.
 
 ## Working Demo of the Application
 
