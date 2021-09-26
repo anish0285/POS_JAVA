@@ -4,7 +4,7 @@ This application was developed as a part of my college's final project by me and
 
 ## Working Demo of the Application
 
-[![Working Demo of the Restaurant POS](https://img.youtube.com/vi/1mm-djRaCyw/0.jpg)](https://www.youtube.com/watch?v=1mm-djRaCyw)
+[![Working Demo of the Restaurant POS](https://img.youtube.com/vi/BZ4WztMvbvM/0.jpg)](https://www.youtube.com/watch?v=BZ4WztMvbvM)
 
 ## Setup Instructions
 
